@@ -42,6 +42,8 @@ if(promedio >= 50 && promedio <= 100) {
 	}else {
 		System.out.println("error en el calculo del promedio");
 }
+}else {
+	System.out.println("Favor revisar notas");
 }
 
 }	
