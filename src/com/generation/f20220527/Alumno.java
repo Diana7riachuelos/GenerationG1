@@ -1,0 +1,6 @@
+package com.generation.f20220527;
+
+public class Alumno {
+
+}
+No entendi, disculpen.
