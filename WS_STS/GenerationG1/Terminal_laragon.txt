@@ -1,0 +1,6 @@
+mysql -u Diana -p
+enter password
+create database sistemag1;
+use sistemag1;
+show tables;
+describe usuarios;
