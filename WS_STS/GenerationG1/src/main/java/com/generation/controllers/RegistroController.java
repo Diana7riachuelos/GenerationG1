@@ -2,6 +2,7 @@ package com.generation.controllers;
 
 import javax.validation.Valid;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -11,11 +12,18 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.generation.models.Usuario;
+import com.generation.services.UsuarioService;
 
 @Controller
 @RequestMapping("/registro")
 public class RegistroController {
 //ruta para desplegar el jsp
+	
+	
+//inyeccion de dependencias
+@Autowired 	
+UsuarioService usuarioService;
+
 
 @RequestMapping("")
 public String registro(@ModelAttribute("usuario") Usuario usuario) {
@@ -44,8 +52,13 @@ public String registroUsuario(@RequestParam(value="gato")String nombre,
 		return "registro.jsp";
 		}
 		
+	
 	System.out.println(usuario.getNombre()+" "+usuario.getApellido()+ " "+ usuario.getEdad());  
-	return "registro.jsp";
+	
+	//iremos hacia la base de datos, enviaremos el objeto al service
+	usuarioService.saveUsuario(usuario);
+	
+	return "index.jsp";
 }
 	
 	}
