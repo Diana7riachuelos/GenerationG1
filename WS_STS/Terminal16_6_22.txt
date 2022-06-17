@@ -1,0 +1,5 @@
+mysql -u Diana -p
+enter password
+use sistemag1;
+show tables;
+select * from autos;
