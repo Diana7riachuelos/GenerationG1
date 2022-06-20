@@ -18,7 +18,7 @@
 		<c:if test="${msgError!= null}">
 			<c:out value="${msgError}"></c:out>
 		</c:if>
-		<form:form action="/auto/guardar" method="post" modelAttribute="auto">
+		<form:form action="/auto/actualizar/${auto.id}" method="post" modelAttribute="auto">
 			<form:label path="marca" class="form-label" >Marca:</form:label>
 			<form:input path="marca" class="form-control" />
 			<br>
@@ -31,9 +31,7 @@
 			<form:label path="color" class="form-label">Color:</form:label>
 			<form:input path="color" class="form-control"/>
 			<br>
-			<input type="submit" value="Guardar Auto">
-			<button type="submit" class="btn btn-primary">Guardar Auto</button>
-			<button type="submit" class="btn btn-outline-primary">Guardar Auto</button>
+			<button type="submit" class="btn btn-outLine-warning">Editar Auto</button>
 		</form:form>
 	</div>
 </body>

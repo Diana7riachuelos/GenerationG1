@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.generation.models.Auto;
 
 @Repository
-public interface AutoRepository extends JpaRepository<Auto, Long> {
+public interface AutoRepository extends JpaRepository<Auto, Long>{
 
 }

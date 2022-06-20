@@ -15,12 +15,11 @@ public class UsuarioService {
 
 	public void saveUsuario(@Valid Usuario usuario) {
 		usuarioRepository.save(usuario);
-		// TODO Auto-generated method stub
+	
 		
 	}
 	
- /** Logica de negocio o validaciones del sistema**/
-/**llamar al repository (inyeccion de dependencia)**/
+//llamar al repository (inyeccion de dependencia)*
 
 	
 		
