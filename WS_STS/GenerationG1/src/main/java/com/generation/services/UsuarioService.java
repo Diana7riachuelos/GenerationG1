@@ -1,5 +1,7 @@
 package com.generation.services;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,9 +16,11 @@ public class UsuarioService {
 	UsuarioRepository usuarioRepository;
 
 	public void saveUsuario(@Valid Usuario usuario) {
-		usuarioRepository.save(usuario);
-	
+		usuarioRepository.save(usuario);	
+	}
+	public List<Usuario> findAll() {
 		
+		return usuarioRepository.findAll();
 	}
 	
 //llamar al repository (inyeccion de dependencia)*

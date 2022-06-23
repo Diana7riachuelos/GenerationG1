@@ -29,7 +29,7 @@ public class AutoService {
 		return autoRepository.findById(id).get();//.get() especifica el tipo de datos que necesitamos
 	}
 	public void eliminarPorId(Long id) {
-		// TODO Auto-generated method stub
+		
 		autoRepository.deleteById(id);	
 	
 	

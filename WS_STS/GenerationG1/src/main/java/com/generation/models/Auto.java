@@ -1,9 +1,14 @@
 package com.generation.models;
 
+import java.util.Date;
+
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
@@ -57,5 +62,15 @@ public class Auto {
 	public void setColor(String color) {
 		this.color = color;
 	}
-
+	@Column(updatable= false)
+	private Date createdAt;
+	private Date updatedAt;
+	@PrePersist
+    protected void onCreate(){
+        this.createdAt = new Date();
+    }
+    @PreUpdate
+    protected void onUpdate(){
+        this.updatedAt = new Date();
+    }
 }

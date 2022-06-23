@@ -1,9 +1,17 @@
 package com.generation.models;
 
+import java.util.Date;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.PrePersist;
+import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -69,6 +77,28 @@ public Integer getEdad() {
 }
 public void setEdad(Integer edad) {
 	this.edad = edad;
+}
+@Column(updatable= false)
+private Date createdAt;
+private Date updatedAt;
+
+//onetoone
+@OneToOne(mappedBy="usuario",cascade=CascadeType.ALL ,fetch=FetchType.LAZY)
+private Licencia licencia; 
+
+@PrePersist
+protected void onCreate(){
+    this.createdAt = new Date();
+}
+@PreUpdate
+protected void onUpdate(){
+    this.updatedAt = new Date();
+}
+public Licencia getLicencia() {
+	return licencia;
+}
+public void setLicencia(Licencia licencia) {
+	this.licencia = licencia;
 }
 
 }
