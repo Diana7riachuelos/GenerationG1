@@ -3,46 +3,43 @@ package com.generation.models;
 import java.util.Date;
 import java.util.List;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToMany;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="clientes")
-public class Cliente {
+@Table(name="roles")
+public class Rol {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
 	private String nombre;
-	private String apellido;
-	private String email;
-	
-	//OneToMany
-	@OneToMany(mappedBy ="cliente",cascade=CascadeType.ALL ,fetch=FetchType.LAZY)
-	private List<CompraVenta> comprasVentas;
-	
+	private String descripcion;
+
+	//ManyToMany (2 oneToMany)
+	@ManyToMany(mappedBy = "roles",fetch=FetchType.LAZY)
+	private List<Usuario> listaUsuario;
 	
 	@Column(updatable= false)
 	private Date createdAt;
 	private Date updatedAt;
 	
-	public Cliente() {
+	public Rol() {
 		super();
 	}
-	public Cliente(String nombre, String apellido, String email) {
+	public Rol(String nombre, String descripcion, List<Usuario> listaUsuario) {
 		super();
 		this.nombre = nombre;
-		this.apellido = apellido;
-		this.email = email;
+		this.descripcion = descripcion;
+		this.listaUsuario = listaUsuario;
 	}
 	
 	public Long getId() {
@@ -51,11 +48,11 @@ public class Cliente {
 	public String getNombre() {
 		return nombre;
 	}
-	public String getApellido() {
-		return apellido;
+	public String getDescripcion() {
+		return descripcion;
 	}
-	public String getEmail() {
-		return email;
+	public List<Usuario> getListaUsuario() {
+		return listaUsuario;
 	}
 	public void setId(Long id) {
 		this.id = id;
@@ -63,11 +60,11 @@ public class Cliente {
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
 	}
-	public void setApellido(String apellido) {
-		this.apellido = apellido;
+	public void setDescripcion(String descripcion) {
+		this.descripcion = descripcion;
 	}
-	public void setEmail(String email) {
-		this.email = email;
+	public void setListaUsuario(List<Usuario> listaUsuario) {
+		this.listaUsuario = listaUsuario;
 	}
 	
     @PrePersist
@@ -78,5 +75,6 @@ public class Cliente {
     protected void onUpdate(){
         this.updatedAt = new Date();
     }
+	
 	
 }
