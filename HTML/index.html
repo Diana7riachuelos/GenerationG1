@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elementos HTML</title>
+</head>
+
+<body>
+    <!--Heading-->
+    <h1>Titulo h1 </h1>
+    <h2>Titulo h2 </h2>
+    <h3>Titulo h3 </h3>
+    <h4>Titulo h4 </h4>
+    <h5>Titulo h5 </h5>
+    <h6>Titulo h6 </h6>
+    <!--Salto de linea-->
+    <br>
+    <!--linea horizontal-->
+    <hr>
+    <!--Parrafos para trabajar con texto-->
+    <p>
+        <b>Explore</b> <i>Hola Diana</i> <u> buena tarde</u>
+    </p>
+
+    <p>
+        <b> 
+            <i>
+                <u>
+                    Diana Carolina 
+                </u>
+            </i>
+        </b>
+    </p>
+    <br>
+    <hr>
+    <!--imagenes-->
+    <img src="R (1).jpg" alt="imagen1">
+    <img src="ase/img/R (1).jpg" alt="html" width="50" height="50">
+    <!--al agregar solo width o height, la imagen mantendrá la proporcion-->
+    <img src="ase/img/53j.png" alt="imagen2" width="100">
+    <br>
+    <hr>
+    <!--Link o hipervinculos-->
+    <a href="https://www.generation.org/"> Visitar Generation </a>
+    <br>
+    <!--url valor absoluto, redirige a otra pagina-->
+    <!--Target="_blank" abre la pagina en otra pestaña-->
+    <a href="https://www.lun.com" target="_blank"> acceder a Lun.com</a>
+    <!--url valor relativo, redirige dentro d ela misma web-->
+    <a href="pagina2.html">Ir a la pagina 2</a>
+    <!--url valor anclaje, movernos dentro de una misma pagina-->
+    <a href="#nombre">ir a seccion de la pagina</a>
+    <!---->
+    <a href="https://www.generation.org/" target="_blank">
+        <img src="ase/img/curso.jpg" alt="Curso" width="50">
+    </a>
+    <br>
+    <hr>
+    <!--Listas : ordenadas y las No ordenadas-->
+    <ol>
+        <li>grupo 1</li>
+        <li>grupo 2</li>
+        <li>grupo 3</li>
+        <li>grupo 4</li>
+        <li>grupo 5</li>
+        <li>grupo 6</li>
+        <li>grupo 7
+            <ol>
+                <li>grupo 7.1</li>
+                <li>grupo 7.2</li>
+            </ol>
+        </li>
+    </ol>
+    <!--lista no ordenada-->
+    <ul>
+        <li>grupo 1</li>
+        <li>grupo 2</li>
+        <li>grupo 3</li>
+        <li>grupo 4</li>
+        <li>grupo 5</li>
+        <li>grupo 6</li>
+        <li>grupo 7
+            <ul>
+                <li>grupo 7.1</li>
+                <li>grupo 7.2</li>
+                <li>
+                    <ul>
+                        <li>
+                            <a href="#menu">Menu</a>
+                        </li>
+                        <li>curso b</li>
+
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+
+    <!--
+    <ul>
+        <c:forEach items="${lista}" var="item">
+            <li>${item}</li>
+        </c:forEach>
+    </ul>-->
+
+    <br>
+    <hr>
+    <!--tabla-->
+    <!--estructura de una tabla-->
+    <table>
+        <thead>
+            <tr>
+                <th>Edad</th>
+                <th>Nombre</th>
+                <th>Apellido Paterno</th>
+                <th>Apellido Materno</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>27</td>
+                <td>Diana</td>
+                <td>Miranda</td>
+                <td>Piña</td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>Debora</td>
+                <td>Quiroz</td>
+                <td>Pavez</td>
+            </tr>
+
+        </tbody>
+    </table>
+
+</body>
+
+</html>
