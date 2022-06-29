@@ -22,6 +22,10 @@
 			<input type="submit" class="btn btn-primary">
 		</form>
 		<br>
+		<!-- paginacion -->
+		<c:forEach var="numeroPagina" begin="1" end="${totalPaginas}" >
+			<a href="/auto/pagina/${numeroPagina}" >${numeroPagina}</a>
+		</c:forEach>
 		<!-- Tabla -->
 		<table class="table">
 			<thead>
@@ -36,7 +40,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="auto" items="${autosCapturados}" >
+				<c:forEach var="auto" items="${autosCapturados.content}" >
 					<tr>
 						<th>id</th>
 						<th scope="row">${auto.id}</th>
@@ -45,7 +49,7 @@
 						<td>${auto.color}</td>
 						<td>${auto.velocidad}</td>
 						<td><a class="btn btn-warning" href="/auto/editar/${auto.id}" role="button">Editar</a></td>
-						<td><a class="btn btn-danger" href="eliminar/${auto.id}" role="button">Eliminar</a></td>
+						<td><a class="btn btn-danger" href="/auto/eliminar/${auto.id}" role="button">Eliminar</a></td>
 					</tr>
 				</c:forEach>
 			</tbody>
