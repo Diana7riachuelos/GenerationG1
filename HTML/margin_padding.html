@@ -46,6 +46,55 @@
             display: inline-block;
             /*se fusionan los parrafos*/
         }
+        /*alineacion por default, es por abajo*/
+        
+        #default1 {
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            vertical-align: default;
+            /*ya es por default*/
+        }
+        
+        #default2 {
+            width: 50px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+        }
+        
+        #top1 {
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #top2 {
+            width: 50px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+            vertical-align: top;
+        }
+        
+        #middle1 {
+            width: 50px;
+            height: 100px;
+            background-color: red;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        #middle2 {
+            width: 50px;
+            height: 200px;
+            background-color: blue;
+            display: inline-block;
+            vertical-align: middle;
+        }
     </style>
 </head>
 
@@ -72,6 +121,25 @@
 
     <p> piedra caliza es de pastel de panini</p>
     <p>la red el supermercado login</p>
+
+    <!--alineacion vertical por default (boton)-->
+    <div>
+        <div id="default1"></div>
+        <div id="default2"></div>
+    </div>
+    <!--alineacion vertical por la parte superior (top)-->
+    <div>
+        <div id="top1"></div>
+        <div id="top2"></div>
+    </div>
+    <br>
+    <!--alineacion vertical central (middle)-->
+    <div>
+        <div id="middle1"></div>
+        <div id="middle2"></div>
+    </div>
+
+    <!--media query-->
 </body>
 
 </html>
