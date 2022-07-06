@@ -63,9 +63,74 @@
                 $('#p4').fadeToggle(4000);
             });
 
+            //manipulacion de elementos html
+            //after()
+            $('#btn11').click(function() {
+                $('#p5').after('<h2> titulo h2 </h2>');
+                // $('#p5').after('<img src="" alt="prueba">');
+            });
+            $('#btn12').click(function() {
+                $('#p5').before('<h2> titulo h2 </h2>');
+                $('#p5').before('<img src="" alt="before">');
+            });
+            //append -> agrega entre la etiqueta al final
+            $('#btn13').click(function() {
+                $('#p5').append('<span> esto es span </span>');
+                $('#p5').append('<img src="" alt="append">');
+            });
+            //prepend agrega al principio de la etiqueta
+            $('#btn14').click(function() {
+                $('#p5').prepend('<prepend> esto es span </prepend>');
+                $('#p5').preend('<img src="" alt="prepend">');
+            });
+            //attr-> agrega un atributo a un elemento html
+            $('#btn15').click(function() {
+                $('#p6').attr('name', 'parrafo6');
+                $('#p6').attr('style', 'color:red', 'font-size: 30px');
+                $('txt1').attr('value', 'generatio g1');
+                // $('#p6').attr('<attr> esto es span </attr>');
+                // $('#p6').attr('<img src="" alt="attr">');
+            });
+            //html->crea un elemento html, pero borra todo lo anterior.
+            $('#btn16').click(function() {
+                $('#p7').html('<spam> etiqueta span </spam>');
+            });
+            //val -> obtener el valor de un elemento html
+            $('#btn17').click(function() {
+                let valor = $('#txt2').val(); //capturar el valor del elemento
+                alert(valor);
+            });
+
+            //manipulacion de estilo
+            //css-> agregar un estilo a un elemento html
+            $('#btn18').click(function() {
+                $('#div1').html('<p id="p9"> parrafo dentro de div</p>');
+                $('#p9').css("color", "gray");
+                $('#p9').css("font-size", "30px");
+            });
+
+            $('#btn19').click(function() {
+                $('#div1').addClass('div1');
+                $('#div1').addClass('divColor');
+            });
+
+            //quita todas las clases o la especificada en el parrafo
+            $('#btn20').click(function() {
+                $('#div1').removeClass('div1');
+
+            });
+
             //fin jquery    
         });
     </script>
+
+    <style>
+        .divColor {
+            width: 400 px;
+            height: 200 px;
+            background-color: salmon;
+        }
+    </style>
 
 </head>
 
@@ -100,6 +165,52 @@
     <p id="p4">Esto es un parrafo 4</p>
     <br>
     <hr>
+    <!--manipulacion-->
+    <h2>Esto es un elemento html</h2>
+    <button id="btn11"> after()</button>
+    <button id="btn12">before ()</button>
+    <button id="btn13">append ()</button>
+    <button id="btn14">prepend ()</button>
+    <p id="p5">Esto es un parrafo 5</p>
+    <br>
+    <hr>
+
+    <h3>Esto es un elemento html</h3>
+    <button id="btn15">attr ()</button>
+    <p id="p6">Parrafo 6</p>
+    <input type="text" id="txt1">
+    <br>
+    <hr>
+
+    <!--html-->
+    <p id="p7">Parrafo 7</p>
+    <button id="btn16">html ()</button>
+    <br>
+    <hr>
+    <!--val-->
+    <p id="p8">Parrafo 8</p>
+    <input type="text" id="txt2" value="valor input txt2">
+    <button id="btn17">html ()</button>
+    <br>
+    <hr>
+
+    <!--manipulacion de estilo-->
+    <div id="div1">
+
+    </div>
+    <button id="btn18">css ()</button>
+
+    <!--agregar una clase-->
+    <button id="btn19">addClass ()</button>
+    <br>
+    <hr>
+    <!--remover una clase-->
+    <button id="btn20">removeClass ()</button>
+    <br>
+    <hr>
+
+
+
 </body>
 
 </html>
