@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Auto</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <section class="registro">
+        <h1 align="center">Registro Auto</h1>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table-info" scope="col">#</th>
+                    <th class="table-warning" scope="col">Numero</th>
+                    <th class="table-warning" scope="col">Fecha Vencimiento</th>
+                    <th class="table-warning" scope="col">Clase</th>
+                    <th class="table-warning" scope="col">Estado</th>
+                    <th class="table-warning" scope="col">Usuario</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <th class="table-info" scope="row">#</th>
+                    <td class="table-success"><input type="number" name="numero" id="numero" placeholder="Ingrese Numero"></td>
+                    <td class="table-success"><input type="date" name="fechaVencimiento" id="fechaVencimiento" placeholder="Ingrese fecha vencimiento"></td>
+                    <td class="table-success"><input type="text" name="clase" id="text" placeholder="Ingrese la clase"></td>
+                    <td class="table-success"><input type="texto" name="estado" id="estado" placeholder="Ingrese el estado"></td>
+                    <td class="table-success"><input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Ingrese su nombre de usuario"></td>
+                    <br>
+                    <td><button type="submit" class="btn btn-primary">Guardar Licencia</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th class="table-info" scope="col">id</th>
+                    <th class="table-warning" scope="col">Marca</th>
+                    <th class="table-warning" scope="col">Modelo</th>
+                    <th class="table-warning" scope="col">Color</th>
+                    <th class="table-warning" scope="col">Velocidad</th>
+                    <th class="table-warning" scope="col">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="table-success"><input type="number" name="numero" id="numero" placeholder="Ingrese id"></td>
+                    <td class="table-success"><input type="texto" name="marca" id="marca" placeholder="Ingrese marca"></td>
+                    <td class="table-success"><input type="text" name="modelo" id="modelo" placeholder="Ingrese el modelo"></td>
+                    <td class="table-success"><input type="text" name="color" id="color" placeholder="Ingrese el color"></td>
+                    <td class="table-success"><input type="number" name="velocidad" id="velocidad" placeholder="Ingrese la velocidad"></td>
+                    <td class="table-success"><input type="text" name="acciones" id="acciones" placeholder="Ingrese accion"></td>
+                    <br>
+                    <td><a class="btn btn-warning" href="/auto/editar/${auto.id}" role="button">Editar</a></td>
+                    <td><a class="btn btn-danger" href="/auto/eliminar/${auto.id}" role="button">Eliminar</a></td>
+                </tr>
+            </tbody>
+        </table>
+        </div>
+</body>
+
+</html>
