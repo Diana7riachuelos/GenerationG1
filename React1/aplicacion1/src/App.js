@@ -1,30 +1,10 @@
-import React from 'react';
+import React from "react";
+import UsuarioComponent from "./components/UsuarioComponent";
 
-const App = () =>{
-    return(
-        <div className="container mt-4">
-            <div className='row'>
-                <div className='col-8'>
-                    <h1>Lista de Animales</h1>
-                    <div>
-                    <ol>
-        <li>Perro</li>
-        <li>Gato</li>
-        <li>Gorrión</li>
-        <li>Elefante</li>
-        <li>León</li>
-        <li>Ballena</li>
-        <li>Tortuga</li>
-            </ol>
-            </div>
-                </div>
-                <div className='col-4'>
-                    <h1>Formulario</h1>
-                </div>
-            </div>
-        </div>
-
-    );
+const App = () => {
+return (
+    <UsuarioComponent/>
+);
 };
 
 export default App;
