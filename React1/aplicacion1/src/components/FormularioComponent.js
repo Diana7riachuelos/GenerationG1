@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useState, useEffect} from "react";
 
 const initialValues =[
 {
@@ -10,9 +10,19 @@ const initialValues =[
 }
 ]
 
-const FormularioComponent = ({usuarioAdd}) => {
+const FormularioComponent = ({usuarioAdd, usuarioEditado, usuarioEdit}) => {
 const [values, setValues] = useState(initialValues);
 const {key, nombre, apellido, edad, password}= values;
+
+useEffect( 
+    ()=>{
+    if(usuarioEditado !== null){
+        setValues(usuarioEditado)
+    }
+    }
+    ,[usuarioEditado]);
+
+    {/*useEffect(accion que debe hacer, [estado del cual debe estar pendiente])*/}
 
 const handleInputChange=(e)=>{
     
@@ -26,11 +36,18 @@ const handleInputChange=(e)=>{
 
 const handleSubmit =(e)=>{
     e.preventDefault();
+    if(usuarioEditado !== null){
+    usuarioEdit(values)
+    }else{
     usuarioAdd(values)
+    }
+    
 }
 
     return(
     <form onSubmit={handleSubmit}>
+    <h1>{usuarioEditado ? 'Editar Usuario':'Crear Usuario'}</h1>
+      {/*usuarioEditado es nulo? si no muestra 'Editar usuario', si es nulo muestra 'Ingresar Usuario' */}
         <div className="form-group">
         <label>ID</label>
         <input
@@ -94,7 +111,7 @@ const handleSubmit =(e)=>{
         ></input>
         <br/>
         </div>
-        <button type="submit" className="btn btn-outline-primary">Crear usuario</button>
+        <button type="submit" className="btn btn-outline-primary">{usuarioEditado ? 'Editar':'Crear'}</button>
     </form>
     );
 }
